@@ -8,6 +8,7 @@ package tpch;
 import connection.ConnectionFactory;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 import queries.TPCHQueriesTime;
 
 /**
@@ -18,19 +19,21 @@ public class TPCH {
 
     // mysql, monetdb, postgresql
     static String SGBD = "monetdb";
-    static String DB = "tpch1";
+    static String DB = "demo_2";
     static String user = "monetdb";
     static String password = "monetdb";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
 
         ConnectionFactory cf = new ConnectionFactory(SGBD, DB, user, password);
         Connection con = cf.getConnection();
         System.out.println("Connected to " + SGBD + " - " + DB);
 
-        TPCHQueriesTime tpchQT = new TPCHQueriesTime();
-        tpchQT.getTpchq().setConnection(con);
-        tpchQT.run();
-        tpchQT.saveQueriesTime("queries_time.txt");
+        //Power p = new Power(con, 1);
+        //p.run();
+        //p.saveTimes();
+        
+        Throughput t = new Throughput(con, 1);
+        t.run();
     }
 }

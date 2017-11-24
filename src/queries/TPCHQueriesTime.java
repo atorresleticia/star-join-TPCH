@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,11 +58,13 @@ public class TPCHQueriesTime {
         tpchTimes[21] = this.getQuery22Time();
     }
 
-    public void saveQueriesTime(String file) throws IOException {
+    public void saveQueriesTime(String file) {
         try (BufferedWriter queriesTimesIO = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)))) {
             queriesTimesIO.write(Arrays.toString(tpchTimes));
             queriesTimesIO.newLine();
         } catch (FileNotFoundException ex) {
+            Logger.getLogger(TPCHQueriesTime.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(TPCHQueriesTime.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -71,9 +74,9 @@ public class TPCHQueriesTime {
         long startTime = System.nanoTime();
         tpchq.query1();
         long endTime = System.nanoTime();
-        
+
         System.out.println("Query 1 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -84,29 +87,29 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 2 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
     public double getQuery3Time() {
 
         long startTime = System.nanoTime();
-        tpchq.query3();
+        //tpchq.query3();
         long endTime = System.nanoTime();
 
         System.out.println("Query 3 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
     public double getQuery4Time() {
 
         long startTime = System.nanoTime();
-        tpchq.query4();
+        //tpchq.query4();
         long endTime = System.nanoTime();
 
         System.out.println("Query 4 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -117,7 +120,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 5 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -128,7 +131,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 6 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -139,7 +142,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 7 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -150,7 +153,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 8 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -161,7 +164,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 9 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -172,7 +175,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 10 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -183,7 +186,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 11 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -194,18 +197,18 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 12 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
     public double getQuery13Time() {
 
         long startTime = System.nanoTime();
-        tpchq.query13();
+        //tpchq.query13();
         long endTime = System.nanoTime();
 
         System.out.println("Query 13 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -216,7 +219,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 14 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -227,7 +230,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 15 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -238,7 +241,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 16 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -249,7 +252,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 17 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -260,7 +263,7 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 18 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
@@ -271,40 +274,40 @@ public class TPCHQueriesTime {
         long endTime = System.nanoTime();
 
         System.out.println("Query 19 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
     public double getQuery20Time() {
 
         long startTime = System.nanoTime();
-        tpchq.query20();
+        //tpchq.query20();
         long endTime = System.nanoTime();
 
         System.out.println("Query 20 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
     public double getQuery21Time() {
 
         long startTime = System.nanoTime();
-        tpchq.query21();
+        //tpchq.query21();
         long endTime = System.nanoTime();
 
         System.out.println("Query 21 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 
     public double getQuery22Time() {
 
         long startTime = System.nanoTime();
-        tpchq.query22();
+        //tpchq.query22();
         long endTime = System.nanoTime();
 
         System.out.println("Query 22 done.");
-        
+
         return (endTime - startTime) / 1000000.;
     }
 }

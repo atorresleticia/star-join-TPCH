@@ -26,7 +26,7 @@ public class TPCHQueriesTime {
 
     public TPCHQueriesTime() {
         this.tpchq = new TPCHQueries();
-        this.tpchTimes = new double[22];
+        this.tpchTimes = new double[15];
     }
 
     public TPCHQueries getTpchq() {
@@ -34,28 +34,25 @@ public class TPCHQueriesTime {
     }
 
     public void run() {
-        tpchTimes[0] = this.getQuery1Time();
-        tpchTimes[1] = this.getQuery2Time();
-        tpchTimes[2] = this.getQuery3Time();
-        tpchTimes[3] = this.getQuery4Time();
-        tpchTimes[4] = this.getQuery5Time();
-        tpchTimes[5] = this.getQuery6Time();
-        tpchTimes[6] = this.getQuery7Time();
-        tpchTimes[7] = this.getQuery8Time();
-        tpchTimes[8] = this.getQuery9Time();
-        tpchTimes[9] = this.getQuery10Time();
-        tpchTimes[10] = this.getQuery11Time();
-        tpchTimes[11] = this.getQuery12Time();
-        tpchTimes[12] = this.getQuery13Time();
-        tpchTimes[13] = this.getQuery14Time();
-        tpchTimes[14] = this.getQuery15Time();
-        tpchTimes[15] = this.getQuery16Time();
-        tpchTimes[16] = this.getQuery17Time();
-        tpchTimes[17] = this.getQuery18Time();
-        tpchTimes[18] = this.getQuery19Time();
-        tpchTimes[19] = this.getQuery20Time();
-        tpchTimes[20] = this.getQuery21Time();
-        tpchTimes[21] = this.getQuery22Time();
+    	tpchTimes[0] = this.getQuery3Time();
+        tpchTimes[1] = this.getQuery5Time();
+        tpchTimes[2] = this.getQuery6Time();
+        tpchTimes[3] = this.getQuery7Time();
+        tpchTimes[4] = this.getQuery8Time();
+        tpchTimes[5] = this.getQuery9Time();
+        tpchTimes[6] = this.getQuery10Time();
+        tpchTimes[7] = this.getQuery11Time();
+        tpchTimes[8] = this.getQuery12Time();
+        tpchTimes[9] = this.getQuery13Time();
+        tpchTimes[10] = this.getQuery14Time();
+        tpchTimes[11] = this.getQuery16Time();
+        tpchTimes[12] = this.getQuery18Time();
+        tpchTimes[13] = this.getQuery19Time();
+        tpchTimes[14] = this.getQuery22Time();
+    }
+
+    public double[] getTimes() {
+        return this.tpchTimes;
     }
 
     public void saveQueriesTime(String file) {
@@ -94,7 +91,7 @@ public class TPCHQueriesTime {
     public double getQuery3Time() {
 
         long startTime = System.nanoTime();
-        //tpchq.query3();
+        tpchq.query3();
         long endTime = System.nanoTime();
 
         System.out.println("Query 3 done.");
@@ -105,7 +102,7 @@ public class TPCHQueriesTime {
     public double getQuery4Time() {
 
         long startTime = System.nanoTime();
-        //tpchq.query4();
+        tpchq.query4();
         long endTime = System.nanoTime();
 
         System.out.println("Query 4 done.");
@@ -204,7 +201,7 @@ public class TPCHQueriesTime {
     public double getQuery13Time() {
 
         long startTime = System.nanoTime();
-        //tpchq.query13();
+        tpchq.query13();
         long endTime = System.nanoTime();
 
         System.out.println("Query 13 done.");
@@ -281,7 +278,7 @@ public class TPCHQueriesTime {
     public double getQuery20Time() {
 
         long startTime = System.nanoTime();
-        //tpchq.query20();
+        tpchq.query20();
         long endTime = System.nanoTime();
 
         System.out.println("Query 20 done.");
@@ -292,7 +289,7 @@ public class TPCHQueriesTime {
     public double getQuery21Time() {
 
         long startTime = System.nanoTime();
-        //tpchq.query21();
+        tpchq.query21();
         long endTime = System.nanoTime();
 
         System.out.println("Query 21 done.");
@@ -303,7 +300,7 @@ public class TPCHQueriesTime {
     public double getQuery22Time() {
 
         long startTime = System.nanoTime();
-        //tpchq.query22();
+        tpchq.query22();
         long endTime = System.nanoTime();
 
         System.out.println("Query 22 done.");

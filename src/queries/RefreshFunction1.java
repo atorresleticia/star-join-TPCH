@@ -47,7 +47,7 @@ public class RefreshFunction1 {
                     + "        i_extendedprice, i_discount, i_tax, i_returnflag, i_linestatus,\n"
                     + "        i_shipdate, i_commitdate, i_receiptdate, i_shipinstruct, i_shipmode,\n"
                     + "        i_orderstatus, i_ordertotalprice, i_orderdate, i_orderpriority,\n"
-                    + "        i_shippriority, i_ordercomment FROM rf1.item%d", streamNo);
+                    + "        i_shippriority, i_ordercomment FROM refresh_functions.item%d", streamNo);
 
             st.executeUpdate(sql);
         } catch (SQLException ex) {

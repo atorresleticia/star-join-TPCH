@@ -37,28 +37,36 @@ public class TPCHQueries {
     }
 
     public void runQueries() {
-//        query1();
-        query2();
         query3();
-        query4();
+        System.out.println("Q3 DONE");
         query5();
+        System.out.println("Q5 DONE");
         query6();
+        System.out.println("Q6 DONE");
         query7();
+        System.out.println("Q7 DONE");
         query8();
+        System.out.println("Q8 DONE");
         query9();
+        System.out.println("Q9 DONE");
         query10();
+        System.out.println("Q10 DONE");
         query11();
+        System.out.println("Q11 DONE");
         query12();
+        System.out.println("Q12 DONE");
         query13();
+        System.out.println("Q13 DONE");
         query14();
-        query15();
+        System.out.println("Q14 DONE");
         query16();
-        query17();
+        System.out.println("Q16 DONE");
         query18();
+        System.out.println("Q18 DONE");
         query19();
-        query20();
-        query21();
+        System.out.println("Q19 DONE");
         query22();
+        System.out.println("Q22 DONE");
     }
 
     public void executeQuery(String sql) {
@@ -69,22 +77,10 @@ public class TPCHQueries {
         try {
             st = con.createStatement();
             rs = st.executeQuery(sql);
-            //ResultSetMetaData md = rs.getMetaData();
-            while (rs.next()) {
-                /*for (int j = 1; j <= md.getColumnCount(); j++) {
-                    System.out.print(rs.getString(j) + "\t");
-                }
-                System.out.println("");*/
-            }
+            while (rs.next());
         } catch (SQLException ex) {
             Logger.getLogger(TPCHQueries.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            /*try {
-                st.close();
-                rs.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(TPCHQueries.class.getName()).log(Level.SEVERE, null, ex);
-            }*/
         }
 
     }
@@ -220,8 +216,8 @@ public class TPCHQueries {
                 + "	sum(i_extendedprice * (1 - i_discount)) as revenue\n"
                 + "from\n"
                 + "	customer,\n"
-                + "	item\n"
-                + "	supplier,\n"
+                + "	item,\n"
+                + "	supplier\n"
                 + "where\n"
                 + "	c_custkey = i_custkey\n"
                 + "	and i_suppkey = s_suppkey\n"
@@ -245,7 +241,7 @@ public class TPCHQueries {
                 + "where\n"
                 + "	i_shipdate >= date '1994-01-01'\n"
                 + "	and i_shipdate < date '1994-01-01' + interval '1' year\n"
-                + "	and i_discount between y - 0.01 and y + 0.01\n"
+                + "	and i_discount between .06 - 0.01 and .06 + 0.01\n"
                 + "	and i_quantity < 24;";
         executeQuery(sql);
     }
@@ -267,7 +263,7 @@ public class TPCHQueries {
                 + "		from\n"
                 + "			supplier,\n"
                 + "			item,\n"
-                + "			customer,\n"
+                + "			customer\n"
                 + "		where\n"
                 + "			s_suppkey = i_suppkey\n"
                 + "			and c_custkey = i_custkey\n"
@@ -400,7 +396,7 @@ public class TPCHQueries {
                 + "	i_partkey having\n"
                 + "		sum(i_supplycost * i_availqty) > (\n"
                 + "			select\n"
-                + "				sum(i_supplycost * i_availqty) * y\n"
+                + "				sum(i_supplycost * i_availqty) * 0.0001000000\n"
                 + "			from\n"
                 + "				item,\n"
                 + "				supplier\n"
@@ -432,7 +428,7 @@ public class TPCHQueries {
                 + "from\n"
                 + "	item\n"
                 + "where\n"
-                + "	and i_shipmode in ('MAIL', 'SHIP')\n"
+                + "	i_shipmode in ('MAIL', 'SHIP')\n"
                 + "	and i_commitdate < i_receiptdate\n"
                 + "	and i_shipdate < i_commitdate\n"
                 + "	and i_receiptdate >= date '1994-01-01'\n"
@@ -634,8 +630,7 @@ public class TPCHQueries {
                 + "        i_ordertotalprice\n"
                 + "order by\n"
                 + "        i_ordertotalprice desc,\n"
-                + "        i_orderdate"
-                + "limit 100;";
+                + "        i_orderdate;";
         executeQuery(sql);
     }
 
@@ -753,8 +748,7 @@ public class TPCHQueries {
                 + "        s_name\n"
                 + "order by\n"
                 + "        numwait desc,\n"
-                + "        s_name"
-                + "limit 100;";
+                + "        s_name;";
         executeQuery(sql);
     }
 

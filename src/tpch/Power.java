@@ -19,12 +19,14 @@ public class Power {
     private final Connection con;
     private final TPCHQueriesTime tpchQT;
     private final RefreshFunctionTime rfT;
+    private final String sgbd;
 
-    public Power(Connection con, int sf) {
+    public Power(Connection con, int sf, String sgbd) {
         this.sf = sf;
         this.con = con;
         this.tpchQT = new TPCHQueriesTime();
         this.rfT = new RefreshFunctionTime();
+        this.sgbd = sgbd;
         setConnection();
     }
 
@@ -39,16 +41,26 @@ public class Power {
         rfT.getRF2().getIndexes(path);
         
         rfT.runRF1();
-        //tpchQT.run();
+        tpchQT.run();
         rfT.runRF2();
+
+        saveTimes();
     }
     
     public void saveTimes(){
-        String rfFileName = String.format("STAR_POWER_RF_%dGB", this.sf);
-        String queriesFileName = String.format("STAR_POWER_QUERIES_%dGB", this.sf);
+        String rfFileName = String.format("%s_STAR_POWER_RF_%dGB", this.sgbd, this.sf);
+        String queriesFileName = String.format("%s_STAR_POWER_QUERIES_%dGB", this.sgbd, this.sf);
         
         rfT.saveRFTime(rfFileName);
         tpchQT.saveQueriesTime(queriesFileName);
+    }
+
+    public double[] getQueryExecutionTime() {
+        return this.tpchQT.getTimes();
+    }
+
+    public double[] getRefreshExecutionTime() {
+        return this.rfT.getTimes();
     }
 
 }

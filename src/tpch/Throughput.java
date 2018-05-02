@@ -32,14 +32,17 @@ public class Throughput {
     private final RefreshFunction2[] rf2;
     private final TPCHQueries tpchq;
     private Map<Integer, Integer> stream;
+    private final String sgbd;
+    private double time;
 
-    public Throughput(Connection con, int sf) {
+    public Throughput(Connection con, int sf, String sgbd) {
         initMap();
         this.sf = sf;
         this.con = con;
         this.rf1 = new RefreshFunction1();
         this.rf2 = new RefreshFunction2[getNoOfStreams()]; // retorna o numero de streams para o sf
         this.tpchq = new TPCHQueries();
+        this.sgbd = sgbd;
 
         setConnection();
     }
@@ -110,7 +113,8 @@ public class Throughput {
 
         long endTime = System.nanoTime();
 
-        saveTime((endTime - startTime) / 1000000.);
+        this.time = (endTime - startTime) / 1000000.;
+        saveTime();
 
     }
 
@@ -163,7 +167,8 @@ public class Throughput {
 
         long endTime = System.nanoTime();
 
-        saveTime((endTime - startTime) / 1000000.);
+        this.time = (endTime - startTime) / 1000000.;
+        saveTime();
 
     }
 
@@ -224,15 +229,20 @@ public class Throughput {
 
         long endTime = System.nanoTime();
 
-        saveTime((endTime - startTime) / 1000000.);
+        this.time = (endTime - startTime) / 1000000.;
+        saveTime();
 
     }
 
-    public void saveTime(double time) {
-        String file = String.format("STAR_THROUGHPUT_%dGB", this.sf);
+    public double getTime() {
+        return this.time;
+    }
+
+    public void saveTime() {
+        String file = String.format("%s_STAR_THROUGHPUT_%dGB", this.sgbd, this.sf);
 
         try (BufferedWriter queriesTimesIO = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)))) {
-            queriesTimesIO.write(Double.toString(time));
+            queriesTimesIO.write(Double.toString(this.time));
             queriesTimesIO.newLine();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TPCHQueriesTime.class.getName()).log(Level.SEVERE, null, ex);

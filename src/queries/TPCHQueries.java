@@ -38,35 +38,35 @@ public class TPCHQueries {
 
     public void runQueries() {
         query3();
-        System.out.println("Q3 DONE");
+        System.out.print("3, ");
         query5();
-        System.out.println("Q5 DONE");
+        System.out.print("5, ");
         query6();
-        System.out.println("Q6 DONE");
+        System.out.print("6, ");
         query7();
-        System.out.println("Q7 DONE");
+        System.out.print("7, ");
         query8();
-        System.out.println("Q8 DONE");
+        System.out.print("8, ");
         query9();
-        System.out.println("Q9 DONE");
+        System.out.print("9, ");
         query10();
-        System.out.println("Q10 DONE");
+        System.out.print("10, ");
         query11();
-        System.out.println("Q11 DONE");
+        System.out.print("11, ");
         query12();
-        System.out.println("Q12 DONE");
+        System.out.print("12, ");
         query13();
-        System.out.println("Q13 DONE");
+        System.out.print("13, ");
         query14();
-        System.out.println("Q14 DONE");
+        System.out.print("14, ");
         query16();
-        System.out.println("Q16 DONE");
+        System.out.print("16, ");
         query18();
-        System.out.println("Q18 DONE");
+        System.out.print("18, ");
         query19();
-        System.out.println("Q19 DONE");
+        System.out.print("19, ");
         query22();
-        System.out.println("Q22 DONE");
+        System.out.println("22.");
     }
 
     public void executeQuery(String sql) {

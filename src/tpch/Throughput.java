@@ -66,7 +66,8 @@ public class Throughput {
         for (int i = 0; i < getNoOfStreams(); i++) {
             this.rf2[i] = new RefreshFunction2();
             this.rf2[i].setConnection(this.con);
-            this.rf2[i].getIndexes(String.format("D:\\TPCH\\DATA\\DENORMALIZED\\RF\\%dGB\\delete.%d", this.sf, i + 1));
+//            this.rf2[i].getIndexes(String.format("D:\\TPCH\\DATA\\DENORMALIZED\\RF\\%dGB\\delete.%d", this.sf, i + 1));
+            this.rf2[i].getIndexes(String.format("/home/leticia/tcc_files/DATA/DENORMALIZED/RF/%dGB/delete.%d", this.sf, i + 1));
         }
 
         this.tpchq.setConnection(this.con);
@@ -239,7 +240,7 @@ public class Throughput {
     }
 
     public void saveTime() {
-        String file = String.format("%s_STAR_THROUGHPUT_%dGB", this.sgbd, this.sf);
+        String file = String.format("/home/leticia/tcc_files/saidas/%d/%s_STAR_THROUGHPUT_%dGB", this.sf, this.sgbd, this.sf);
 
         try (BufferedWriter queriesTimesIO = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)))) {
             queriesTimesIO.write(Double.toString(this.time));

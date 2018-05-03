@@ -9,8 +9,6 @@ public class TPCHCalc {
     private double QphH;
 
     public TPCHCalc() {
-        this.queryTotalTime = 1;
-        this.refreshTotalTime = 1;
     }
 
     public void setSumQueryTotalTime(double[] queryTimes) {

@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="star-join-TPCH:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/star_join_TPCH_jar</output-path>
+    <root id="root">
+      <element id="archive" name="star-join-TPCH.jar">
+        <element id="module-output" name="star-join-TPCH" />
+      </element>
+      <element id="library" level="module" name="monetdb-jdbc-2.27.jar" module-name="star-join-TPCH" />
+      <element id="library" level="module" name="postgresql-42.1.4.jar" module-name="star-join-TPCH" />
+    </root>
+  </artifact>
+</component>

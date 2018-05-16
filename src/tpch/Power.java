@@ -37,8 +37,8 @@ public class Power {
     }
 
     public void run() {
-//        String path = String.format("D:\\TPCH\\DATA\\DENORMALIZED\\RF\\%dGB\\delete.1", this.sf);
-        String path = String.format("/home/leticia/tcc_files/DATA/DENORMALIZED/RF/%dGB/delete.1", this.sf);
+//        String path = String.format("D:\\TPCH\\DATA\\DENORMALIZED\\RF\\%dGB\\delete.u1", this.sf);
+        String path = String.format("/home/leticia/tcc_files/DATA/DENORMALIZED/RF/%dGB/delete.u1", this.sf);
         rfT.getRF2().getIndexes(path);
         
         rfT.runRF1();

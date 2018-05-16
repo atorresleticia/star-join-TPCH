@@ -74,7 +74,7 @@ public class TPCHQueriesTime {
 
         System.out.print("1, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery2Time() {
@@ -85,7 +85,7 @@ public class TPCHQueriesTime {
 
         System.out.print("2, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery3Time() {
@@ -96,7 +96,7 @@ public class TPCHQueriesTime {
 
         System.out.print("3, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery4Time() {
@@ -107,7 +107,7 @@ public class TPCHQueriesTime {
 
         System.out.print("4, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery5Time() {
@@ -118,7 +118,7 @@ public class TPCHQueriesTime {
 
         System.out.print("5, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery6Time() {
@@ -129,7 +129,7 @@ public class TPCHQueriesTime {
 
         System.out.print("6, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery7Time() {
@@ -140,7 +140,7 @@ public class TPCHQueriesTime {
 
         System.out.print("7, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery8Time() {
@@ -151,7 +151,7 @@ public class TPCHQueriesTime {
 
         System.out.print("8, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery9Time() {
@@ -162,7 +162,7 @@ public class TPCHQueriesTime {
 
         System.out.print("9, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery10Time() {
@@ -173,7 +173,7 @@ public class TPCHQueriesTime {
 
         System.out.print("10, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery11Time() {
@@ -184,7 +184,7 @@ public class TPCHQueriesTime {
 
         System.out.print("11, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery12Time() {
@@ -195,7 +195,7 @@ public class TPCHQueriesTime {
 
         System.out.print("12, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery13Time() {
@@ -206,7 +206,7 @@ public class TPCHQueriesTime {
 
         System.out.print("13, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery14Time() {
@@ -217,7 +217,7 @@ public class TPCHQueriesTime {
 
         System.out.print("14, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery15Time() {
@@ -228,7 +228,7 @@ public class TPCHQueriesTime {
 
         System.out.print("Query 15 done.");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery16Time() {
@@ -239,7 +239,7 @@ public class TPCHQueriesTime {
 
         System.out.print("16, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery17Time() {
@@ -250,7 +250,7 @@ public class TPCHQueriesTime {
 
         System.out.println("Query 17 done.");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery18Time() {
@@ -261,7 +261,7 @@ public class TPCHQueriesTime {
 
         System.out.print("18, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery19Time() {
@@ -272,7 +272,7 @@ public class TPCHQueriesTime {
 
         System.out.print("19, ");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery20Time() {
@@ -283,7 +283,7 @@ public class TPCHQueriesTime {
 
         System.out.println("Query 20 done.");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery21Time() {
@@ -294,7 +294,7 @@ public class TPCHQueriesTime {
 
         System.out.println("Query 21 done.");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 
     public double getQuery22Time() {
@@ -305,6 +305,6 @@ public class TPCHQueriesTime {
 
         System.out.println("22.");
 
-        return (endTime - startTime) / 1000000.;
+        return (endTime - startTime) / 1000000000.;
     }
 }
